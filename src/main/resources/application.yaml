@@ -1,3 +1,24 @@
 spring:
   application:
     name: cambio-service
+
+  # Configurações de Conexão com o Banco de Dados
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: minhasenha
+    driver-class-name: org.postgresql.Driver
+
+  # Configurações do Hibernate / JPA
+  jpa:
+    # Mostra no console o SQL que o Spring está executando
+    show-sql: true
+
+    # Cria e atualiza as tabelas do banco automaticamente
+    hibernate:
+      ddl-auto: update
+
+    # Formata o SQL no console para ficar mais legível
+    properties:
+      hibernate:
+        format_sql: true
