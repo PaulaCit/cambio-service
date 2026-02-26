@@ -2,6 +2,12 @@ spring:
   application:
     name: cambio-service
 
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+      connect-string: localhost:2181
+
   # Configurações de Conexão com o Banco de Dados
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres
@@ -22,3 +28,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
+logging:
+  level:
+    '[org.apache.zookeeper.ClientCnxn]': WARN
